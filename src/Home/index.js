@@ -34,7 +34,7 @@ function Home() {
     //  how take res to use show data
   };
 
-
+// test command
   //   execute
   useEffect(() => {
     // call to api product
