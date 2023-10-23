@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Home from "./Home";
+import Read from "./pages/Read";
+import About from "./pages/About";
+import MyNav from "./components/MyNav";
+import MyFooter from "./components/MyFooter";
+import NotFound from "./pages/404";
+import Price from "./pages/Price";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <MyNav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/read" element={<Read />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/price" element={<Price />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+
+      <MyFooter />
+    </>
   );
 }
 
 export default App;
+export function Profile() {
+  return (
+    <img
+      style={{ width: 200 }}
+      src="https://eduport.webestica.com/assets/images/courses/4by3/11.jpg"
+      alt=""
+    />
+  );
+}
